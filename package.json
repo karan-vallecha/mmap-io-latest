@@ -1,0 +1,60 @@
+{
+  "name": "mmap-io-latest",
+  "version": "1.0.5",
+  "license": "MIT",
+  "author": "Karan Vallecha (https://github.com/karan-vallecha)",
+  "description": "Updated Node.js/C++ mmap bindings with TypeScript support and Node 20+ compatibility.",
+  "homepage": "https://github.com/karan-vallecha/mmap-io-latest",
+  "keywords": [
+    "mmap",
+    "memory-mapped",
+    "file",
+    "C++",
+    "node-addon",
+    "performance",
+    "typescript",
+    "node-gyp",
+    "napi",
+    "bindings"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karan-vallecha/mmap-io-latest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karan-vallecha/mmap-io-latest/issues"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "gypfile": true,
+  "files": [
+    "binding.gyp",
+    "LICENSE",
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run build-addon",
+    "build-addon": "node-gyp configure && node-gyp rebuild",
+    "prepare": "npm run build",
+    "prebuild": "prebuildify --napi --strip",
+    "install": "npm run build-addon"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "prebuild": "^12.0.0",
+    "prebuildify": "^5.0.0",
+    "prebuild-install": "^7.1.3"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.5.0",
+    "node-gyp": "^11.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "commonjs"
+}
